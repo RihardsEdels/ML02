@@ -22,7 +22,7 @@ class Index extends \Magento\Backend\App\Action
     public function execute()
     {
         $resultPage = $this->pageFactory->create();
-        $resultPage->setActiveMenu('Magebit_Grid::Grid');
+        $resultPage->setActiveMenu('Magebit_Grid::home');
         $resultPage->getConfig()->getTitle()->prepend(__('Grid UI Example'));
 
         return $resultPage;
