@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="admin">
-        <route id="dev_grid" frontName="dev_grid">
+        <route id="learning_grid" frontName="learning_grid">
+            <module name="Magebit_Grid" before="Magento_Backend" />
+        </route>
+        <route id="learning_brands" frontName="learning_brands">
             <module name="Magebit_Grid" before="Magento_Backend" />
         </route>
     </router>
