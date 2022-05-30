@@ -33,12 +33,12 @@ class AddAttributesToUiDataProvider
        $attribute = $this->attributeRepository->get('catalog_category', 'name'); 
 
        $result->getSelect()->joinLeft(
-          ['learninggridname' => $attribute->getBackendTable()],
-          "learninggridname.".$column." = main_table.".$column." AND learninggridname.attribute_id = ".$attribute->getAttributeId(),
-          ['name' => "learninggridname.value"] 
+          ['devgridname' => $attribute->getBackendTable()],
+          "devgridname.".$column." = main_table.".$column." AND devgridname.attribute_id = ".$attribute->getAttributeId(),
+          ['name' => "devgridname.value"] 
        );  
       
-       $result->getSelect()->where('learninggridname.value LIKE "B%"');
+       $result->getSelect()->where('devgridname.value LIKE "B%"');
 
        return $result;
    }
