@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Magebit_Grid::home" title="Learning" module="Magebit_Grid" sortOrder="1"  resource="Magento_Catalog::categories" action="dev_grid/index/index"/>
-    </menu>
+        <add id="Magebit_Grid::home" title="Learning" module="Magebit_Grid" sortOrder="1"  resource="Magento_Catalog::categories" />
+    
+        <add id="Magebit_Grid::Grid" title="Grid" module="Magebit_Grid" sortOrder="1" parent="Magebit_Grid::home"  resource="Magento_Catalog::categories" action="dev_grid/index/index"/>
+</menu>
 </config>
