@@ -5,13 +5,12 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magebit\SampleModule\Setup\Patch\Data;
+namespace Magebit\Form\Setup\Patch\Data;
 
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 
-class dummyPatch
-implements DataPatchInterface
+class addFormData implements DataPatchInterface
 
 {
     /**
@@ -41,19 +40,21 @@ implements DataPatchInterface
 
         //insert entries into table
         $connection->insert(
-            $this->moduleDataSetup->getTable('magebit_sample_table'),
-            ['name' => 'John', 'role' => 'CEO']
+            $this->moduleDataSetup->getTable('magecomp_customtable'),
+            ['name' => 'Name1', 'content' => 'content1', 'title' => 'title1']
         );
 
         $connection->insert(
-            $this->moduleDataSetup->getTable('magebit_sample_table'),
-            ['name' => 'Daisy', 'role' => 'CTO']
+            $this->moduleDataSetup->getTable('magecomp_customtable'),
+            ['name' => 'Name2', 'content' => 'content2', 'title' => 'title2']
         );
 
         $connection->insert(
-            $this->moduleDataSetup->getTable('magebit_sample_table'),
-            ['name' => 'Alex', 'role' => 'CTO']
+            $this->moduleDataSetup->getTable('magecomp_customtable'),
+            ['name' => 'Name3', 'content' => 'content3', 'title' => 'title3']
         );
+
+
         $connection->endSetup();
     }
 

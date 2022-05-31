@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+
+    <menu>
+
+        <add id="Magebit_Form::menu" title="Form" module="Magebit_Form" sortOrder="20" parent="Magebit_Grid::home" action="uiexample/index/index" resource="Magebit_Form::menu" />
+
+    </menu>
+
+</config>
