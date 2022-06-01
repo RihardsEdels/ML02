@@ -4,7 +4,7 @@ namespace Magebit\Faq\Model;
  
 use Magento\Framework\Model\AbstractModel;
  
-class Custom extends AbstractModel  {
+class Question extends AbstractModel  {
  
 const CACHE_TAG = 'id';
  
@@ -12,7 +12,7 @@ const CACHE_TAG = 'id';
  
 {
  
-        $this->_init('Magebit\Faq\Model\ResourceModel\Custom');
+        $this->_init('Magebit\Faq\Model\ResourceModel\Question');
  
   }
  

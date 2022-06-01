@@ -4,7 +4,7 @@ namespace Magebit\Faq\Model\ResourceModel;
  
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
  
-class Custom extends AbstractDb
+class Question extends AbstractDb
  
 {
  

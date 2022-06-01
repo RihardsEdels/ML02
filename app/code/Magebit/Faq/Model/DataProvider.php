@@ -2,7 +2,7 @@
 
 namespace Magebit\Faq\Model;
 
-use Magebit\Faq\Model\ResourceModel\Custom\CollectionFactory;
+use Magebit\Faq\Model\ResourceModel\Question\CollectionFactory;
 
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 
