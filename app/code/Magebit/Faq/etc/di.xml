@@ -11,7 +11,7 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="faq_record_grid_list_data_source" xsi:type="string">Magebit\Faq\Model\ResourceModel\Grid\Grid\Collection</item>
+                <item name="faq_question_listing_data_source" xsi:type="string">Magebit\Faq\Model\ResourceModel\Grid\Grid\Collection</item>
             </argument>
         </arguments>
     </type>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+    <argument name="data" xsi:type="array">
+
+        <item name="js_config" xsi:type="array">
+
+            <item name="provider" xsi:type="string">faq_question_form.faq_question_listing_data_source</item>
+
+            <item name="deps" xsi:type="string">faq_question_form.faq_question_listing_data_source</item>
+
+        </item>
+
+        <item name="label" xsi:type="string" translate="true">Add New Record</item>
+
+        <item name="config" xsi:type="array">
+
+            <item name="dataScope" xsi:type="string">data</item>
+
+            <item name="namespace" xsi:type="string">faq_question_form</item>
+
+        </item>
+
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+
+
+    </argument>
+
+    <settings>
+        <buttons>
+            <button name="save" class="Magento\Cms\Block\Adminhtml\Page\Edit\SaveButton" />
+            <button name="delete" class="Magento\Cms\Block\Adminhtml\Page\Edit\DeleteButton" />
+            <button name="back" class="Magento\Cms\Block\Adminhtml\Page\Edit\BackButton" />
+        </buttons>
+        <namespace>faq_question_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>faq_question_form.faq_question_listing_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="faq_question_listing_data_source">
+
+        <argument name="dataProvider" xsi:type="configurableObject">
+
+            <argument name="class" xsi:type="string">Magebit\Form\Model\DataProvider</argument>
+
+            <argument name="name" xsi:type="string">faq_question_listing_data_source</argument>
+
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+
+            <argument name="data" xsi:type="array">
+
+                <item name="config" xsi:type="array">
+
+                    <item name="submit_url" xsi:type="url" path="*/*/save" />
+
+                </item>
+
+            </argument>
+
+        </argument>
+
+        <argument name="data" xsi:type="array">
+
+            <item name="js_config" xsi:type="array">
+
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+
+            </item>
+
+        </argument>
+
+    </dataSource>
+
+    <fieldset name="general_information">
+
+        <argument name="data" xsi:type="array">
+
+            <item name="config" xsi:type="array">
+
+                <item name="collapsible" xsi:type="boolean">false</item>
+
+                <item name="label" xsi:type="string" translate="true">General Information</item>
+
+                <item name="sortOrder" xsi:type="number">20</item>
+
+            </item>
+
+        </argument>
+
+        <field name="is_active" sortOrder="1" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="default" xsi:type="number">1</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>boolean</dataType>
+                <label translate="true">Enable Question</label>
+                <dataScope>is_active</dataScope>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+
+        <field name="question" sortOrder="2" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">page</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Question</label>
+                <dataScope>title</dataScope>
+            </settings>
+        </field>
+        <field name="answer" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">page</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Answer</label>
+                <dataScope>title</dataScope>
+            </settings>
+        </field>
+
+    </fieldset>
+
+</form>

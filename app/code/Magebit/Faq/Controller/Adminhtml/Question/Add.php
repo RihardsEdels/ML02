@@ -28,8 +28,8 @@ class Add extends \Magento\Backend\App\Action
     {
 
         $resultPage = $this->resultPageFactory->create();
-
-        $resultPage->getConfig()->getTitle()->prepend(__('Add New Record'));
+        $resultPage->setActiveMenu('Magebit_Faq::faq');
+        $resultPage->getConfig()->getTitle()->prepend(__('Add New Question'));
 
         return $resultPage;
     }
