@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Magebit_Faq::title" title="FAQ TASK" module="Magebit_Faq" sortOrder="1" parent="Magento_Backend::content" resource="Magebit_Faq::title" />
+        <add id="Magebit_Faq::faq" title="FAQ" module="Magebit_Faq" sortOrder="1" parent="Magebit_Faq::title" resource="Magebit_Faq::faq" action="faq/question/index" />
+    </menu>
+</config>
