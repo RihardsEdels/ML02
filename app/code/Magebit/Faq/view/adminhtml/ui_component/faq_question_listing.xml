@@ -74,6 +74,8 @@
                 </settings>
             </filterSelect>
         </filters>
+
+
         <massaction name="listing_massaction">
             <action name="delete">
                 <settings>
@@ -81,21 +83,21 @@
                         <message translate="true">Are you sure you want to delete selected items?</message>
                         <title translate="true">Delete items</title>
                     </confirm>
-                    <url path="cms/page/massDelete" />
+                    <url path="faq/question/massDelete" />
                     <type>delete</type>
                     <label translate="true">Delete</label>
                 </settings>
             </action>
             <action name="disable">
                 <settings>
-                    <url path="cms/page/massDisable" />
+                    <url path="faq/question/massDisable" />
                     <type>disable</type>
                     <label translate="true">Disable</label>
                 </settings>
             </action>
             <action name="enable">
                 <settings>
-                    <url path="cms/page/massEnable" />
+                    <url path="faq/question/massEnable" />
                     <type>enable</type>
                     <label translate="true">Enable</label>
                 </settings>
@@ -111,6 +113,8 @@
                 </settings>
             </action>
         </massaction>
+
+
         <paging name="listing_paging" />
     </listingToolbar>
     <columns name="faq_columns">

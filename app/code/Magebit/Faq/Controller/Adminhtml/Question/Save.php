@@ -51,7 +51,7 @@ class Save extends \Magento\Backend\App\Action
 
             if ($saveData) {
 
-                $this->messageManager->addSuccess(__('Insert data Successfully !'));
+                $this->messageManager->addSuccess(__('FAQ added successfully !'));
             }
         } catch (\Exception $e) {
 
