@@ -1,8 +1,10 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Magebit\Faq\Controller\Adminhtml\Question;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
@@ -56,7 +58,7 @@ class MassDisable extends \Magento\Backend\App\Action implements HttpPostActionI
         $collection = $this->filter->getCollection($this->collectionFactory->create());
 
         foreach ($collection as $item) {
-            $item->setIsActive(false);
+            $item->setStatus(false);
             $item->save();
         }
 
