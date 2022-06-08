@@ -1,0 +1,12 @@
+.question {
+    background-color: #e0d8d8;
+    padding: 20px;
+    font-weight: 700;
+    border: 1px;
+    border-style: solid;
+    border-color: #a09292;
+}
+
+.answer {
+    padding: 20px;
+}

@@ -1,0 +1,39 @@
+<?php
+$collection = $block->getCollection();
+
+$sortedCollection = $block->sortCollection($collection, 'position', 'ASC');
+
+function hello()
+{
+    echo 'hello';
+}
+
+if ($sortedCollection->count()) {
+?>
+    <link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Magebit_Faq::css/source/module.css') ?>">
+    <div>
+        <div id="element">
+            <?php foreach ($sortedCollection as $item) : ?>
+                <?php $question = $item->getQuestion(); ?>
+                <?php $answer = $item->getAnswer(); ?>
+
+                <div data-role="collapsible">
+                    <div class="question" data-role="trigger">
+                        <?php echo $question ?>
+                    </div>
+                </div>
+                <div class="answer" data-role="content"><?php echo $answer ?></div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <script>
+        require([
+            'jquery',
+            'accordion'
+        ], function($) {
+            $("#element").accordion();
+        });
+    </script>
+<?php
+}
+?>

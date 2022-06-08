@@ -35,32 +35,11 @@
 
     </argument>
 
-    <!-- <settings>
-        <buttons>
-            <button name="save" class="Magento\Faq\Ui\Component\Form\Button\SaveButton" />
-        </buttons>
-
-    </settings> -->
-
-
-    <!-- <settings>
-        <buttons>
-            <button name="save" class="Magento\Cms\Block\Adminhtml\Page\Edit\SaveButton" />
-            <button name="delete" class="Magento\Cms\Block\Adminhtml\Page\Edit\DeleteButton" />
-            <button name="back" class="Magento\Cms\Block\Adminhtml\Page\Edit\BackButton" />
-        </buttons>
-        <namespace>faq_question_form</namespace>
-        <dataScope>data</dataScope>
-        <deps>
-            <dep>faq_question_form.faq_question_listing_data_source</dep>
-        </deps>
-    </settings> -->
-
     <dataSource name="faq_question_listing_data_source">
 
         <argument name="dataProvider" xsi:type="configurableObject">
 
-            <argument name="class" xsi:type="string">Magebit\Form\Model\DataProvider</argument>
+            <argument name="class" xsi:type="string">Magebit\Faq\Model\DataProvider</argument>
 
             <argument name="name" xsi:type="string">faq_question_listing_data_source</argument>
 
