@@ -10,3 +10,18 @@
 .answer {
     padding: 20px;
 }
+
+form {
+    margin-bottom: 10px;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.sortButton {
+    height: 50px;
+    background-color: #575252;
+    color: #e0d8d8;
+    font-size: 18px;
+    font-weight: 700;
+}

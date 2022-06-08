@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
 namespace Magebit\Faq\Ui\Component\Listing\Column;
 
 use Magento\Framework\UrlInterface;
@@ -17,7 +12,7 @@ use Magento\Framework\Escaper;
 /**
  * Class to build edit and delete link for each item.
  */
-class PageActions extends Column
+class QuestionActions extends Column
 {
     /**
      * Url path

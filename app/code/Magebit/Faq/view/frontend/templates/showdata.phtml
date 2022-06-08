@@ -1,16 +1,23 @@
 <?php
+
 $collection = $block->getCollection();
 
-$sortedCollection = $block->sortCollection($collection, 'position', 'ASC');
-
-function hello()
-{
-    echo 'hello';
+if (array_key_exists('ASC', $_POST)) {
+    $sortedCollection = $block->sortCollection($collection, 'position', 'ASC');
+}
+if (array_key_exists('DESC', $_POST)) {
+    $sortedCollection = $block->sortCollection($collection, 'position', 'DESC');
+} else {
+    $sortedCollection = $block->sortCollection($collection, 'position', 'ASC');
 }
 
 if ($sortedCollection->count()) {
 ?>
     <link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Magebit_Faq::css/source/module.css') ?>">
+    <form method="post">
+        <input class="sortButton" type="submit" name="ASC" class="button" value="Sort Ascending" />
+        <input class="sortButton" type="submit" name="DESC" class="button" value="Sort Descending" />
+    </form>
     <div>
         <div id="element">
             <?php foreach ($sortedCollection as $item) : ?>
