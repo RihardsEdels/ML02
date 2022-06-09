@@ -13,6 +13,11 @@
     </argument>
     <settings>
         <buttons>
+            <button name="frontend">
+                <url path="/faq" />
+                <class>primary</class>
+                <label translate="true">See on frontend</label>
+            </button>
             <button name="add">
                 <url path="*/*/edit" />
                 <class>primary</class>
@@ -166,7 +171,7 @@
         </column>
         <column name="status" component="Magento_Ui/js/grid/columns/select">
             <settings>
-                <options class="Magento\Cms\Model\Page\Source\IsActive" />
+                <options class="Magebit\Faq\Model\Question\Source\Status" />
                 <filter>select</filter>
                 <editor>
                     <editorType>select</editorType>

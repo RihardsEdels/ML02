@@ -30,7 +30,7 @@ class Question extends AbstractModel implements QuestionInterface
      *
      * @return array|int|mixed|null
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->getData(self::QUESTION_ID);
     }
@@ -60,7 +60,7 @@ class Question extends AbstractModel implements QuestionInterface
      *
      * @return array|int|mixed|null
      */
-    public function getStatus(): string
+    public function getStatus(): array
     {
         return [self::STATUS_ENABLED => __('Enabled'), self::STATUS_DISABLED => __('Disabled')];
     }
@@ -93,7 +93,7 @@ class Question extends AbstractModel implements QuestionInterface
      * @param $question
      * @return QuestionInterface|void
      */
-    public function setQuestion($question): QuestionInterface
+    public function setQuestion($question): void
     {
         $this->setData(self::QUESTION, $question);
     }

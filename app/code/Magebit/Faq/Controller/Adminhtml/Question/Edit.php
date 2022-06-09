@@ -18,7 +18,7 @@ class Edit extends \Magento\Backend\App\Action
     {
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Magebit_Faq::faq');
-        $resultPage->getConfig()->getTitle()->prepend(__('Edit question'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Add or Edit question'));
         return $resultPage;
     }
 }
