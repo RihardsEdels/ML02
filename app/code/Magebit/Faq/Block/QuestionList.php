@@ -6,7 +6,7 @@ use Magento\Framework\View\Element\Template;
 use Magento\Backend\Block\Template\Context;
 use Magebit\Faq\Model\ResourceModel\Question\CollectionFactory;
 
-class ShowData extends Template
+class QuestionList extends Template
 {
     public $collection;
 
