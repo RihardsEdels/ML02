@@ -5,39 +5,40 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magebit\Faq\Model\Question;
+use Magento\Framework\Controller\Result\Json;
  
 class InlineEdit extends Action
 {
     protected $jsonFactory;
-    protected $model;
+    protected $question;
  
     public function __construct(
         Context $context,
         JsonFactory $jsonFactory,
-        Question $model
+        Question $question
     )
     {
         parent::__construct($context);
         $this->jsonFactory = $jsonFactory;
-        $this->model = $model;
+        $this->question = $question;
     }
  
-    public function execute()
+    public function execute():Json
     {
         $resultJson = $this->jsonFactory->create();
         $error = false;
         $messages = [];
         if ($this->getRequest()->getParam('isAjax')) {
-            $postItems = $this->getRequest()->getParam('items', []);
-            if (empty($postItems)) {
-                $messages[] = __('Please correct the data sent.');
+            $questions = $this->getRequest()->getParam('items', []);
+            if (empty($questions)) {
+                $messages[] = __('Please correct the input data.');
                 $error = true;
             } else {
-                foreach (array_keys($postItems) as $entityId) {
-                    $modelData = $this->model->load($entityId);
+                foreach (array_keys($questions) as $question) {
+                    $questionData = $this->question->load($question);
                     try {
-                        $modelData->setData(array_merge($modelData->getData(), $postItems[$entityId]));
-                        $modelData->save();
+                        $questionData->setData(array_merge($questionData->getData(), $questions[$question]));
+                        $questionData->save();
                     } catch (\Exception $e) {
                         $messages[] = "[Error:]  {$e->getMessage()}";
                         $error = true;

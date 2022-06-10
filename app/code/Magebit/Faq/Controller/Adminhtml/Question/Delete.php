@@ -1,13 +1,9 @@
 <?php
 
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
 namespace Magebit\Faq\Controller\Adminhtml\Question;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
+use Magento\Backend\Model\View\Result\Redirect;
 
 /**
  * Delete question action.
@@ -25,7 +21,7 @@ class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterf
      *
      * @return \Magento\Backend\Model\View\Result\Redirect
      */
-    public function execute()
+    public function execute():Redirect
     {
         // check if we know what should be deleted
         $id = $this->getRequest()->getParam('id');

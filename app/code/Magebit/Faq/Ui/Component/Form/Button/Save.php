@@ -5,12 +5,9 @@ namespace Magebit\Faq\Ui\Component\Form\Button;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 use Magento\Ui\Component\Control\Container;
 
-
 class Save implements ButtonProviderInterface
-
 {
-
-    public function getButtonData()
+    public function getButtonData():array
     {
         return [
             'label' => __('Save'),
@@ -42,7 +39,7 @@ class Save implements ButtonProviderInterface
      *
      * @return array
      */
-    private function getOptions()
+    private function getOptions():array
     {
         $options = [
             [
@@ -56,7 +53,9 @@ class Save implements ButtonProviderInterface
                                     'targetName' => 'faq_question_form.faq_question_form',
                                     'actionName' => 'save',
                                     'params' => [
-                                        true
+                                        true,[
+                                            'back' => 'close'
+                                        ]
                                     ]
                                 ]
                             ]

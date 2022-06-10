@@ -5,6 +5,7 @@ namespace Magebit\Faq\Controller\Index;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\App\Action\Action;
+use Magento\Framework\View\Result\Page;
 
 class Index extends Action
 {
@@ -16,7 +17,7 @@ class Index extends Action
         $this->resultPageFactory = $resultPageFactory;
     }
 
-    public function execute()
+    public function execute():Page
     {
         return $this->resultPageFactory->create();
     }

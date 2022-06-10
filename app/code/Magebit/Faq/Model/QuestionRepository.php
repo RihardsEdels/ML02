@@ -16,13 +16,8 @@ use Magebit\Faq\Model\ResourceModel\Question as ResourceQuestion;
 class QuestionRepository implements QuestionRepositoryInterface
 {
     private $resource;
-
     private $collectionFactory;
-
     private $questionFactory;
-
-    private $hydrator;
-
 
     public function __construct(
         ResourceQuestion $resource,
@@ -36,7 +31,7 @@ class QuestionRepository implements QuestionRepositoryInterface
         $this->hydrator = $hydrator ?? ObjectManager::getInstance()->get(HydratorInterface::class);
     }
 
-    public function getById($questionId)
+    public function getById($questionId):Question
     {
         $question = $this->questionFactory->create();
         $this->resource->load($question, $questionId);
@@ -46,7 +41,7 @@ class QuestionRepository implements QuestionRepositoryInterface
         return $question;
     }
 
-    public function delete(Data\QuestionInterface $question)
+    public function delete(Data\QuestionInterface $question):bool
     {
         try {
             $this->resource->delete($question);
@@ -57,7 +52,7 @@ class QuestionRepository implements QuestionRepositoryInterface
     }
 
 
-    public function save(Data\QuestionInterface $question)
+    public function save(Data\QuestionInterface $question):Question
     {
         try {
             $this->resource->save($question);
@@ -67,12 +62,12 @@ class QuestionRepository implements QuestionRepositoryInterface
         return $question;
     }
 
-    public function getList()
+    public function getList():mixed
     {
         return $this->collectionFactory->create()->getItems();
     }
 
-    public function deleteById($questionID)
+    public function deleteById($questionID):bool
     {
         return $this->delete($this->getById($questionID));
     }

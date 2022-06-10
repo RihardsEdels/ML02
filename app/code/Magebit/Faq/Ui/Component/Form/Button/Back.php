@@ -26,7 +26,7 @@ class Back implements ButtonProviderInterface
         return $this->context->getUrlBuilder()->getUrl($route, $params);
     }
 
-    public function getButtonData()
+    public function getButtonData():array
     {
         return [
             'label' => __('Back'),
@@ -41,7 +41,7 @@ class Back implements ButtonProviderInterface
      *
      * @return string
      */
-    public function getBackUrl()
+    public function getBackUrl():?string
     {
         return $this->getUrl('*/*/');
     }

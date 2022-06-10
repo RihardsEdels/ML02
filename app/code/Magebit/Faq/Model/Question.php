@@ -6,7 +6,6 @@ namespace Magebit\Faq\Model;
 
 use Magebit\Faq\Api\Data\QuestionInterface;
 use Magento\Framework\Model\AbstractModel;
-
 class Question extends AbstractModel implements QuestionInterface
 {
     /**
@@ -28,9 +27,9 @@ class Question extends AbstractModel implements QuestionInterface
     /**
      * retrieve block id
      *
-     * @return array|int|mixed|null
+     * @return string|null
      */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->getData(self::QUESTION_ID);
     }
@@ -38,9 +37,9 @@ class Question extends AbstractModel implements QuestionInterface
     /**
      * Retrieve Question
      *
-     * @return array|mixed|string|null
+     * @return string|null
      */
-    public function getQuestion(): string
+    public function getQuestion(): ?string
     {
         return $this->getData(self::QUESTION);
     }
@@ -48,9 +47,9 @@ class Question extends AbstractModel implements QuestionInterface
     /**
      * Retrieve Answer
      *
-     * @return array|mixed|string|null
+     * @return string|null
      */
-    public function getAnswer(): string
+    public function getAnswer(): ?string
     {
         return $this->getData(self::ANSWER);
     }
@@ -58,9 +57,9 @@ class Question extends AbstractModel implements QuestionInterface
     /**
      * Retrieve status
      *
-     * @return array|int|mixed|null
+     * @return array
      */
-    public function getStatus(): string
+    public function getStatus(): ?array
     {
         return [self::STATUS_ENABLED => __('Enabled'), self::STATUS_DISABLED => __('Disabled')];
     }
@@ -68,9 +67,9 @@ class Question extends AbstractModel implements QuestionInterface
     /**
      *  Retrieve Position
      *
-     * @return array|mixed|string|null
+     * @return string|null
      */
-    public function getPosition(): string
+    public function getPosition(): ?string
     {
         return $this->getData(self::POSITION);
     }
@@ -78,9 +77,9 @@ class Question extends AbstractModel implements QuestionInterface
     /**
      * Retrieve Update Time
      *
-     * @return array|mixed|string|null
+     * @return string|null
      */
-    public function getUpdateTime(): string
+    public function getUpdateTime(): ?string
     {
         return $this->getData(self::UPDATE_TIME);
     }
@@ -91,9 +90,9 @@ class Question extends AbstractModel implements QuestionInterface
      * Set Question
      *
      * @param $question
-     * @return QuestionInterface|void
+     * @return void
      */
-    public function setQuestion($question): QuestionInterface
+    public function setQuestion($question): void
     {
         $this->setData(self::QUESTION, $question);
     }
@@ -102,9 +101,9 @@ class Question extends AbstractModel implements QuestionInterface
      * Set Answer
      *
      * @param $answer
-     * @return QuestionInterface|void
+     * @return void
      */
-    public function setAnswer($answer)
+    public function setAnswer($answer):void
     {
         $this->setData(self::ANSWER, $answer);
     }
@@ -112,9 +111,9 @@ class Question extends AbstractModel implements QuestionInterface
     /**
      * Set status
      * @param $status
-     * @return QuestionInterface|void
+     * @return Question
      */
-    public function setStatus($status)
+    public function setStatus($status):Question
     {
         return $this->setData(self::STATUS, $status);
     }
@@ -122,9 +121,9 @@ class Question extends AbstractModel implements QuestionInterface
     /**
      * Set Position
      * @param $position
-     * @return QuestionInterface|void
+     * @return Question
      */
-    public function setPosition($position)
+    public function setPosition($position):Question
     {
         return $this->setData(self::POSITION, $position);
     }

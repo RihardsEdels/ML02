@@ -5,8 +5,9 @@ namespace Magebit\Faq\Block;
 use Magento\Framework\View\Element\Template;
 use Magento\Backend\Block\Template\Context;
 use Magebit\Faq\Model\ResourceModel\Question\CollectionFactory;
+use Magebit\Faq\Model\ResourceModel\Question\Collection;
 
-class ShowData extends Template
+class QuestionListing extends Template
 {
     public $collection;
 
@@ -16,14 +17,13 @@ class ShowData extends Template
         parent::__construct($context, $data);
     }
 
-    public function getCollection()
+    public function getCollection():Collection
     {
         return $this->collection->create()->addFieldToFilter('status', 1);;
     }
 
-    public function sortCollection($collection, $sortBy, $sortOrder)
+    public function sortCollection($collection, $sortBy, $sortOrder):Collection
     {
-        $collection->setOrder($sortBy, $sortOrder);
-        return $collection;
+        return $collection->setOrder($sortBy, $sortOrder);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Magebit\Faq\Controller\Adminhtml\Question;
 
+use Magento\Framework\View\Result\Page;
+
 class Edit extends \Magento\Backend\App\Action
 {
     protected $resultPageFactory;
@@ -14,7 +16,7 @@ class Edit extends \Magento\Backend\App\Action
         $this->resultPageFactory = $resultPageFactory;
     }
 
-    public function execute()
+    public function execute():Page
     {
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Magebit_Faq::faq');

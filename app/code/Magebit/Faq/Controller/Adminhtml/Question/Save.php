@@ -42,9 +42,15 @@ class Save extends \Magento\Backend\App\Action
             if ($saveData) {
                 $this->messageManager->addSuccess(__('FAQ added successfully !'));
             }
+
         } catch (\Exception $e) {
             $this->messageManager->addError(__($e->getMessage()));
         }
-        $this->_redirect('*/*/index');
+
+        if ($this->getRequest()->getParam('back') == 'close') {
+            $this->_redirect('*/*/index');
+        } else {
+            $this->_redirect('*/*/edit', ['id' => $model->getId()]);
+        }
     }
 }

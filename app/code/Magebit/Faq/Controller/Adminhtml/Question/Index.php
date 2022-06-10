@@ -2,6 +2,8 @@
 
 namespace Magebit\Faq\Controller\Adminhtml\Question;
 
+use Magento\Framework\View\Result\Page;
+
 class Index extends \Magento\Backend\App\Action
 
 {
@@ -15,13 +17,11 @@ class Index extends \Magento\Backend\App\Action
         $this->resultPageFactory = $resultPageFactory;
     }
 
-
-    public function execute()
+    public function execute():Page
     {
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Magento_Backend::content');
         $resultPage->getConfig()->getTitle()->prepend(__('Frequently Asked Questions'));
-
         return $resultPage;
     }
 }
