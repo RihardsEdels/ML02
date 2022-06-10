@@ -26,4 +26,17 @@ class QuestionListing extends Template
     {
         return $collection->setOrder($sortBy, $sortOrder);
     }
+
+    public function clickSortHandler($collection)
+    {
+        if (array_key_exists('ASC', $_POST)) {
+            $sortedCollection = $this->sortCollection($collection, 'position', 'ASC');
+        }
+        if (array_key_exists('DESC', $_POST)) {
+            $sortedCollection = $this->sortCollection($collection, 'position', 'DESC');
+        } else {
+            $sortedCollection = $this->sortCollection($collection, 'position', 'ASC');
+        }
+        return $sortedCollection;
+    }
 }

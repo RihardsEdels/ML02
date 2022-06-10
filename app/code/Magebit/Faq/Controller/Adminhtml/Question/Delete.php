@@ -4,12 +4,24 @@ namespace Magebit\Faq\Controller\Adminhtml\Question;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Backend\Model\View\Result\Redirect;
+use Magebit\Faq\Model\QuestionRepository;
+use Magebit\Faq\Model\ResourceModel\Question\CollectionFactory;
 
 /**
  * Delete question action.
  */
 class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
+    private $questionRepository;
+
+    public function __construct(
+        \Magento\Backend\App\Action\Context $context,
+        QuestionRepository $questionRepository
+    ) {
+        parent::__construct($context);
+        $this->questionRepository = $questionRepository;
+    }
+    
     /**
      * Authorization level of a basic admin session
      *
@@ -31,14 +43,7 @@ class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterf
         if ($id) {
             $title = "";
             try {
-                // init model and delete
-                $model = $this->_objectManager->create(\Magebit\Faq\Model\Question::class);
-                $model->load($id);
-
-                $title = $model->getTitle();
-                $model->delete();
-
-                // display success message
+                $this->questionRepository->deleteById($id);
                 $this->messageManager->addSuccessMessage(__('The question has been deleted.'));
 
                 return $resultRedirect->setPath('*/*/');

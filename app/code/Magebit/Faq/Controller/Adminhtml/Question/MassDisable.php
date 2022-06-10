@@ -51,7 +51,7 @@ class MassDisable extends \Magento\Backend\App\Action implements HttpPostActionI
         $collection = $this->filter->getCollection($this->collectionFactory->create());
 
         foreach ($collection as $item) {
-            $item->setStatus(false);
+            $item->setStatus(0);
             $item->save();
         }
 
