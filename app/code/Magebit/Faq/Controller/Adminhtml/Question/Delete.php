@@ -5,8 +5,6 @@ namespace Magebit\Faq\Controller\Adminhtml\Question;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Backend\Model\View\Result\Redirect;
 use Magebit\Faq\Model\QuestionRepository;
-use Magebit\Faq\Model\ResourceModel\Question\CollectionFactory;
-
 /**
  * Delete question action.
  */
@@ -41,7 +39,6 @@ class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterf
         $resultRedirect = $this->resultRedirectFactory->create();
 
         if ($id) {
-            $title = "";
             try {
                 $this->questionRepository->deleteById($id);
                 $this->messageManager->addSuccessMessage(__('The question has been deleted.'));

@@ -1,0 +1,4 @@
+interface ProductInterface {
+  brand_name: String
+    @resolver(class: "Magebit\\CatalogGraphQl\\Model\\Resolver\\Product\\Brand")
+}
