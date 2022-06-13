@@ -52,7 +52,7 @@ class Brand implements ResolverInterface
         /** @var Product $product */
         $product = $value['model'];
         $productData = $this->getProductById($product->getId());
-        return $productData->getAttributeText('brand');
+        return $productData->getData('brand');
     }
 
     /**
